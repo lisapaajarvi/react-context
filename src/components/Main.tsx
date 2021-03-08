@@ -1,9 +1,14 @@
 import React from 'react';
+import DetailView from './DetailView';
+import MasterView from './MasterView';
+import ProductList from './ProductList';
 
 function Main() {
     return(
         <div>
-            <p>innehåll...</p>
+            <ProductList/>
+            <MasterView/>
+            <DetailView/>
         </div>
     );
 }
