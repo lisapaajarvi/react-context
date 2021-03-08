@@ -1,12 +1,26 @@
-import React, { CSSProperties } from 'react';
+import React, { Component, CSSProperties } from 'react';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { CartContext } from '../contexts/CartContext';
 
+class Header extends Component {
 
-function Header() {
-    return (
-        <div style={ headerStyle }>
-            <h1 style={headerItem}>Blad och baljor webshop</h1>
-        </div>
-    )
+    render() {
+        return (
+            <CartContext.Consumer>
+                {({ cart }) => {
+                    return (
+                        <header style={headerStyle}>
+                            <h1 style={headerItem}>Blad och baljor</h1>
+                            <div style={{ display: 'flex' }}>
+                                <ShoppingCartIcon/>
+                                <h2>{cart.length}</h2>
+                            </div>
+                        </header>
+                    )
+                }}
+            </CartContext.Consumer>
+            );
+        }
 }
 
 const headerStyle: CSSProperties = {
