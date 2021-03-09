@@ -11,8 +11,10 @@ class Header extends Component {
                     return (
                         <header style={headerStyle}>
                             <h1 style={headerItem}>Blad och baljor</h1>
-                            <div style={{ display: 'flex' }}>
-                                <ShoppingCartIcon/>
+                            <div style={headerItem}>
+                                <div>
+                                  <ShoppingCartIcon style={{color: 'white'}}/>  
+                                </div>
                                 <h2>{cart.length}</h2>
                             </div>
                         </header>
